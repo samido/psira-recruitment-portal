@@ -1,0 +1,386 @@
+/* General Layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.top-panel {
+  position: relative;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  height: 20%;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+.page-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.user-details {
+  font-size: 0.9em;
+}
+
+.bottom-panel {
+  display: flex;
+  flex-grow: 1;
+  height: 80%;
+}
+
+.nav-column {
+  width: 20%;
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+
+.nav-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-item {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #dcdcdc;
+  text-align: center;
+  cursor: pointer;
+}
+
+.nav-item.selected,
+.nav-item:hover {
+  background-color: #8C6023;
+  color: white;
+}
+
+.form-column {
+  width: 80%;
+  padding: 20px;
+  background-color: #fafafa;
+}
+
+/* Form Layout */
+.job-post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center; /* Stack label above input */
+  gap: 10px; /* Adds space between label and input */
+  margin-bottom: 15px; /* Adds space between form groups */
+}
+
+label {
+  width: 100px;
+  font-weight: bold;
+}
+
+input[type="text"],
+textarea,
+select,
+input[type="date"] {
+  width: 80%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+input[type="password"] {
+  flex: 1; /* Allows the input to take the remaining space */
+  padding: 8px;
+  box-sizing: border-box;
+}
+textarea {
+  height: 80px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  color: white;
+  background-color: #8C6023;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Modal Styles */
+.login-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  background-color: white;
+  border: 2px solid #8C6023;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-content {
+  display: flex;
+  width: 100%;
+}
+
+.login-logo {
+  width: 30%;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  width: 70%;
+  padding: 20px;
+}
+
+.login-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px;
+  background-color: #8C6023;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+.forgot-password-btn {
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.forgot-password-btn:hover {
+  opacity: 0.8;
+}
+/* Placeholder Modal Styles */
+.placeholder-modal {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+/* Grid table styles */
+.job-grid {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.job-grid th, .job-grid td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.job-grid th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.job-grid a {
+  color: #8C6023;
+  text-decoration: none;
+}
+
+.job-grid a:hover {
+  text-decoration: underline;
+}
+
+/* Title above the grid */
+h2 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Apply Modal Styles */
+.apply-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;  /* Adjust the width */
+  max-height: 80vh;  /* Limit the modal's height to 80% of the viewport */
+  overflow-y: auto;  /* Enable scrolling if content exceeds height */
+  background-color: white;
+  border: 2px solid #8C6023;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Content inside the modal */
+.apply-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;  /* Add space between elements */
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+/* CSS for the Spinner */
+.spinner-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.spinner {
+  border: 8px solid rgba(255, 255, 255, 0.3);
+  border-top: 8px solid #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Adjust the form group layout for more space for labels */
+.apply-modal .form-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px; /* Additional space between label and input */
+}
+
+.apply-modal label {
+  width: 40%; /* Adjust to give labels more space */
+  font-weight: bold;
+}
+
+.apply-modal input[type="text"],
+.apply-modal input[type="number"],
+.apply-modal input[type="date"],
+.apply-modal select {
+  width: 55%; /* Reduce input width to give more space to labels */
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* Currency input style for Salary */
+input[type="number"].currency-input {
+  text-align: right;
+  padding-right: 10px;
+}
+/* Centered heading in the registration modal */
+.register-modal h1, .register-modal h3 {
+  text-align: center;
+  font-size: 1.8em;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+/* Registration modal form layout */
+.register-modal .register-content {
+  padding: 20px;
+}
+
+.register-modal .form-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+/* Adjust the width of labels and inputs */
+.register-modal label {
+  width: 30%; /* Stretch labels to a more readable width */
+  font-weight: bold;
+  color: #333;
+  text-align: right; /* Align labels to the right for clean columns */
+}
+
+/* Ensuring all input fields are consistently sized */
+.register-modal input[type="text"],
+.register-modal input[type="password"],
+.register-modal input[type="email"],
+.register-modal input[type="number"],
+.register-modal input[type="date"],
+.register-modal select,
+.register-modal textarea {
+  width: 65%; /* Align inputs to the right of labels */
+  padding: 8px;
+  font-size: 1em;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Buttons in the form should also be aligned */
+.register-modal .form-buttons {
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.register-modal button {
+  padding: 10px 20px;
+  background-color: #8C6023;
+  color: white;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.register-modal button:hover {
+  background-color: #8C6023;
+}
+th {
+  cursor: pointer;
+}
+
+th.sorted-asc::after {
+  content: " ▲";
+}
+
+th.sorted-desc::after {
+  content: " ▼";
+}
